@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reserve Your Place</h1>
+        <form id="reservation-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="duration">Duration (in hours):</label>
+            <input type="number" id="duration" name="duration" required>
+            
+            <label for="payment">Payment Amount:</label>
+            <select id="payment" name="payment" required>
+                <option value="50">One place for 50dh</option>
+                <option value="80">Two places for 80dh</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <div id="custom-amount-container" class="hidden">
+                <label for="custom-amount">Custom Amount (in dh):</label>
+                <input type="number" id="custom-amount" name="custom-amount">
+            </div>
+            
+            <button type="submit">Reserve</button>
+        </form>
+        <div id="confirmation" class="hidden">
+            <h2>Reservation Confirmed!</h2>
+            <p id="confirmation-details"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
