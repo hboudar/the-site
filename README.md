@@ -12,7 +12,7 @@ This is a simple web application for reserving a place.
 
 You can view and interact with the application directly through the following link:
 
-[View the Site](https://hboudar.github.io/the-site/)
+[View the Site](https://hboudar.github.io/[the-site](https://github.com/hboudar/the-site/blob/master/index.html)/)
 
 ## Installation
 
