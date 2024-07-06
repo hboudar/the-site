@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('./ecole_42_cluster.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;  /* Ensures the body takes up at least 100% of the viewport height */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  /* Includes padding and border in the element's total width and height */
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 90%;  /* Ensures the container takes up 90% of the viewport width */
+  max-width: 600px;  /* Limits the maximum width to 600px */
+  margin: 10px;  /* Adds margin to ensure spacing */
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;  /* Centers the heading text */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  margin-top: 10px;
+  color: #555;
+}
+
+input, select, button {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;  
+  /* Ensures input, select, and button elements take up the full width of their container */
+  box-sizing: border-box; 
+  /* Includes padding and border in the element's total width and height */
+}
+
+button {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.confirmation {
+  text-align: left;
+}
+
+.confirmation h2 {
+  color: #28a745;
+}
+
+/* Media query for responsive layout adjustments */
+@media (min-width: 600px) {
+  form {
+    flex-direction: row;  /* Changes the form layout to row direction on wider screens */
+    flex-wrap: wrap;  /* Allows wrapping of flex items onto multiple lines */
+    justify-content: space-between;  /* Evenly distributes space between flex items */
+  }
+
+  .form-group {
+    flex: 1 1 calc(50% - 10px);  /* Makes form-group elements take up roughly half the width minus some margin */
+    margin: 5px;  /* Adds margin for spacing between elements */
+  }
+
+  .form-group:nth-child(odd) {
+    margin-right: 10px;  /* Adds extra margin to the right of odd-numbered form-group elements */
+  }
+}

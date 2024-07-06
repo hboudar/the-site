@@ -26,6 +26,17 @@ document.getElementById('buyer-payment').addEventListener('change', function() {
     }
 });
 
+document.getElementById('buyer-payment-method').addEventListener('change', function() {
+    const paymentMethod = this.value;
+    const cihPaymentDetails = document.getElementById('cih-payment-details');
+
+    if (paymentMethod === 'cih') {
+        cihPaymentDetails.classList.remove('hidden');
+    } else {
+        cihPaymentDetails.classList.add('hidden');
+    }
+});
+
 document.getElementById('reservation-form').addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -39,20 +50,42 @@ document.getElementById('reservation-form').addEventListener('submit', function(
         const time = document.getElementById('buyer-time').value;
         const duration = document.getElementById('buyer-duration').value;
         let payment = document.getElementById('buyer-payment').value;
+        const paymentMethod = document.getElementById('buyer-payment-method').value;
 
         if (payment === 'other') {
             payment = document.getElementById('buyer-custom-amount').value;
         }
 
-        confirmationDetails = `
-            Type: Buyer<br>
-            Name: ${name}<br>
-            Email: ${email}<br>
-            Date: ${date}<br>
-            Time: ${time}<br>
-            Duration: ${duration} hours<br>
-            Payment Amount: ${payment} dh
-        `;
+        if (paymentMethod === 'cih') {
+            const cihAccountName = document.getElementById('cih-account-name').value;
+            const cihTransactionAmount = document.getElementById('cih-transaction-amount').value;
+            const cihTransactionId = document.getElementById('cih-transaction-id').value;
+
+            confirmationDetails = `
+                Type: Buyer<br>
+                Name: ${name}<br>
+                Email: ${email}<br>
+                Date: ${date}<br>
+                Time: ${time}<br>
+                Duration: ${duration} hours<br>
+                Payment Amount: ${payment} dh<br>
+                Payment Method: CIH Bank<br>
+                CIH Account Name: ${cihAccountName}<br>
+                Transaction Amount: ${cihTransactionAmount} dh<br>
+                Transaction ID: ${cihTransactionId}
+            `;
+        } else {
+            confirmationDetails = `
+                Type: Buyer<br>
+                Name: ${name}<br>
+                Email: ${email}<br>
+                Date: ${date}<br>
+                Time: ${time}<br>
+                Duration: ${duration} hours<br>
+                Payment Amount: ${payment} dh<br>
+                Payment Method: Cash
+            `;
+        }
     } else if (userType === 'seller') {
         const name = document.getElementById('seller-name').value;
         const email = document.getElementById('seller-email').value;
