@@ -10,34 +10,63 @@
     <div class="container">
         <h1>Reserve Your Place</h1>
         <form id="reservation-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required>
-            
-            <label for="duration">Duration (in hours):</label>
-            <input type="number" id="duration" name="duration" required>
-            
-            <label for="payment">Payment Amount:</label>
-            <select id="payment" name="payment" required>
-                <option value="50">One place for 50dh</option>
-                <option value="80">Two places for 80dh</option>
-                <option value="other">Other</option>
+            <label for="user-type">I am a:</label>
+            <select id="user-type" name="user-type" required>
+                <option value="" disabled selected>Select user type</option>
+                <option value="buyer">Buyer</option>
+                <option value="seller">Seller</option>
             </select>
-            
-            <div id="custom-amount-container" class="hidden">
-                <label for="custom-amount">Custom Amount (in dh):</label>
-                <input type="number" id="custom-amount" name="custom-amount">
+
+            <div id="buyer-fields" class="hidden">
+                <label for="buyer-name">Name:</label>
+                <input type="text" id="buyer-name" name="buyer-name">
+
+                <label for="buyer-email">Email:</label>
+                <input type="email" id="buyer-email" name="buyer-email">
+
+                <label for="buyer-date">Date:</label>
+                <input type="date" id="buyer-date" name="buyer-date">
+
+                <label for="buyer-time">Time:</label>
+                <input type="time" id="buyer-time" name="buyer-time">
+
+                <label for="buyer-duration">Duration (in hours):</label>
+                <input type="number" id="buyer-duration" name="buyer-duration">
+
+                <label for="buyer-payment">Payment Amount:</label>
+                <select id="buyer-payment" name="buyer-payment">
+                    <option value="50">One place for 50dh</option>
+                    <option value="80">Two places for 80dh</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <div id="buyer-custom-amount-container" class="hidden">
+                    <label for="buyer-custom-amount">Custom Amount (in dh):</label>
+                    <input type="number" id="buyer-custom-amount" name="buyer-custom-amount">
+                </div>
             </div>
-            
-            <button type="submit">Reserve</button>
+
+            <div id="seller-fields" class="hidden">
+                <label for="seller-name">Name:</label>
+                <input type="text" id="seller-name" name="seller-name">
+
+                <label for="seller-email">Email:</label>
+                <input type="email" id="seller-email" name="seller-email">
+
+                <label for="seller-date">Date:</label>
+                <input type="date" id="seller-date" name="seller-date">
+
+                <label for="seller-time">Time:</label>
+                <input type="time" id="seller-time" name="seller-time">
+
+                <label for="seller-duration">Duration (in hours):</label>
+                <input type="number" id="seller-duration" name="seller-duration">
+
+                <label for="seller-price">Price Per Place (in dh):</label>
+                <input type="number" id="seller-price" name="seller-price">
+            </div>
+
+            <button type="submit">Submit</button>
         </form>
         <div id="confirmation" class="hidden">
             <h2>Reservation Confirmed!</h2>
